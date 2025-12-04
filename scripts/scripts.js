@@ -10,6 +10,7 @@ import {
   loadSection,
   loadSections,
   loadCSS,
+  loadScript,
 } from './aem.js';
 
 /**
@@ -97,6 +98,8 @@ async function loadEager(doc) {
     decorateMain(main);
     document.body.classList.add('appear');
     await loadSection(main.querySelector('.section'), waitForFirstImage);
+    await loadCSS("https://litehouse.bcbsnc.com/cdn/v4.19.0/style.css");
+    await loadScript("https://litehouse.bcbsnc.com/cdn/v4.19.0/litehouse.js");
   }
 
   try {

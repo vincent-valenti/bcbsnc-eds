@@ -537,6 +537,9 @@ function decorateSections(main) {
     // Convert to LH Container
     const container = document.createElement('lh-container');
     [...section.attributes].forEach((attr) => {
+      if (attr.value === 'false') {
+        return;
+      }
       const attrName = attr.name.startsWith('data-lh-') ? attr.name.split('data-lh-')[1] : attr.name;
       container.setAttribute(attrName, attr.value);
     });

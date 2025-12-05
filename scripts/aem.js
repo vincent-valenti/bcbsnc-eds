@@ -708,7 +708,7 @@ async function loadSection(section, loadCallback) {
  */
 
 async function loadSections(element) {
-  const sections = [...element.querySelectorAll('div.section')];
+  const sections = [...element.querySelectorAll('div.section, lh-container.section')];
   for (let i = 0; i < sections.length; i += 1) {
     // eslint-disable-next-line no-await-in-loop
     await loadSection(sections[i]);

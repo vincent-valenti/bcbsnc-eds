@@ -549,8 +549,10 @@ function decorateSections(main) {
     container.innerHTML = section.innerHTML;
     section.replaceWith(container);
 
-    // Decorate child sections
-    decorateSections(container.querySelector('div.default-content-wrapper'));
+    // Decorate nested sections
+    container.querySelectorAll('div.default-content-wrapper')?.forEach(defaultContentWrapper => {
+      defaultContentWrapper(defaultContentWrapper);
+    });
   });
 }
 

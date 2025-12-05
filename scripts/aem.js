@@ -545,6 +545,9 @@ function decorateSections(main) {
     });
     container.innerHTML = section.innerHTML;
     section.replaceWith(container);
+
+    // Decorate child sections
+    decorateSections(section.querySelector('div.default-content-wrapper'));
   });
 }
 

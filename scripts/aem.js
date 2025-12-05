@@ -517,7 +517,7 @@ function decorateSections(main) {
     section.style.display = 'none';
 
     // Process section metadata
-    const sectionMeta = section.querySelector('div.section-metadata');
+    const sectionMeta = section.querySelector('> div.section-metadata');
     if (sectionMeta) {
       const meta = readBlockConfig(sectionMeta);
       Object.keys(meta).forEach((key) => {

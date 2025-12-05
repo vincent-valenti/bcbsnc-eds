@@ -544,6 +544,8 @@ function decorateSections(main) {
       const attrName = attr.name.startsWith('data-lh-') ? attr.name.split('data-lh-')[1] : attr.name;
       container.setAttribute(attrName, attr.value);
     });
+    // Always inherit
+    container.setAttribute('inherit', 'true');
     container.innerHTML = section.innerHTML;
     section.replaceWith(container);
 

@@ -138,6 +138,12 @@
             "value": "highlight"
           }
         ]
+      },
+      {
+        "component": "boolean",
+        "name": "overlay",
+        "label": "Overlay",
+        "valueType": "boolean"
       }
     ]
   },

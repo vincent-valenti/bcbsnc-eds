@@ -99,7 +99,7 @@ async function loadEager(doc) {
     document.body.classList.add('appear');
     await loadSection(main.querySelector('.section'), waitForFirstImage);
     await loadCSS("https://litehouse.bcbsnc.com/cdn/v4.19.0/style.css");
-    await loadScript("https://litehouse.bcbsnc.com/cdn/v4.19.0/litehouse.js");
+    await loadScript("https://litehouse.bcbsnc.com/cdn/v4.19.0/litehouse.js", { module: true } );
   }
 
   try {

@@ -1,0 +1,24 @@
+body {
+    display: none;
+    margin: 0;
+}
+
+body.appear {
+    display: block;
+}
+
+header .header,
+footer .footer {
+    visibility: hidden;
+}
+
+header .header[data-block-status="loaded"],
+footer .footer[data-block-status="loaded"] {
+    visibility: visible;
+}
+
+/* Litehouse FOUCE */
+*:not(:defined),
+*:not(:defined) * {
+    opacity: 0;
+}

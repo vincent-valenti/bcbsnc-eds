@@ -540,6 +540,7 @@ function decorateSections(main) {
       const attrName = attr.name.startsWith('data-lh-') ? attr.name.split('data-lh-')[1] : attr.name;
       container.setAttribute(attrName, attr.value);
     });
+    container.append(...section.childNodes);
     section.replaceWith(container);
   });
 }

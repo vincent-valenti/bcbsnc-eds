@@ -144,6 +144,92 @@
         "name": "overlay",
         "label": "Overlay",
         "valueType": "boolean"
+      },
+      {
+        "component": "text",
+        "name": "contextId",
+        "label": "Context ID",
+        "valueType": "string"
+      },
+      {
+        "component": "select",
+        "label": "Theme",
+        "name": "theme",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "White",
+            "value": "white"
+          },
+          {
+            "name": "Transparent",
+            "value": "transparent"
+          },
+          {
+            "name": "Neutral Light",
+            "value": "neutral-light"
+          },
+          {
+            "name": "Primary Light Gradient",
+            "value": "primary-light-gradient"
+          },
+          {
+            "name": "Primary Light Gradient Bottom",
+            "value": "primary-light-gradient-bottom"
+          },
+          {
+            "name": "Primary Light",
+            "value": "primary-light"
+          },
+          {
+            "name": "Primary Dark",
+            "value": "primary-dark"
+          },
+          {
+            "name": "Primary Dark",
+            "value": "primary-dark"
+          },
+          {
+            "name": "Secondary Light Gradient",
+            "value": "secondary-light-gradient"
+          },
+          {
+            "name": "Secondary Light",
+            "value": "secondary-light"
+          },
+          {
+            "name": "Secondary Dark",
+            "value": "secondary-dark"
+          },
+          {
+            "name": "Brand One Dark",
+            "value": "brand-one-dark"
+          },
+          {
+            "name": "Brand Two Dark",
+            "value": "brand-two-dark"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "label": "Alignment",
+        "name": "alignment",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Left",
+            "value": "left"
+          },
+          {
+            "name": "Center",
+            "value": "center"
+          },
+          {
+            "name": "Right",
+            "value": "right"
+          }
+        ]
       }
     ]
   },

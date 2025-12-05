@@ -551,7 +551,7 @@ function decorateSections(main) {
 
     // Decorate nested sections
     container.querySelectorAll('div.default-content-wrapper')?.forEach(defaultContentWrapper => {
-      defaultContentWrapper(defaultContentWrapper);
+      decorateSections(defaultContentWrapper);
     });
   });
 }

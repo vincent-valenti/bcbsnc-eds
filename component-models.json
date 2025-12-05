@@ -123,38 +123,21 @@
     "id": "section",
     "fields": [
       {
-        "component": "text",
-        "name": "name",
-        "label": "Section Name",
-        "description": "The label shown for this section in the Content Tree"
-      },
-      {
-        "component": "multiselect",
-        "name": "style",
-        "label": "Style",
-        "options": [
-          {
-            "name": "Highlight",
-            "value": "highlight"
-          }
-        ]
-      },
-      {
         "component": "boolean",
-        "name": "overlay",
+        "name": "lh-overlay",
         "label": "Overlay",
         "valueType": "boolean"
       },
       {
         "component": "text",
-        "name": "contextId",
+        "name": "lh-context-id",
         "label": "Context ID",
         "valueType": "string"
       },
       {
         "component": "select",
         "label": "Theme",
-        "name": "theme",
+        "name": "lh-theme",
         "valueType": "string",
         "options": [
           {
@@ -214,7 +197,7 @@
       {
         "component": "select",
         "label": "Alignment",
-        "name": "alignment",
+        "name": "lh-alignment",
         "valueType": "string",
         "options": [
           {

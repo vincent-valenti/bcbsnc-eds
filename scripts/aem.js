@@ -533,6 +533,15 @@ function decorateSections(main) {
       });
       sectionMeta.parentNode.remove();
     }
+
+    // Convert to LH Container
+    const container = document.createElement('lh-container');
+    [...section.attributes].forEach((attr) => {
+      const attrValue = attr.getAttribute(attr);
+      const attrName = attr.startsWith('data-lh') ? attr.split('data-lh')[1] : attr;
+      container.setAttribute(attrName, attrValue);
+    });
+    section.replaceWith(container);
   });
 }
 

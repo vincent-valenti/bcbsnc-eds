@@ -93,19 +93,19 @@ export function decorateMain(main) {
 async function loadEager(doc) {
   document.documentElement.lang = 'en';
   decorateTemplateAndTheme();
+  await loadCSS("https://litehouse.bcbsnc.com/cdn/v4.19.0/style.css");
+  await loadScript("https://litehouse.bcbsnc.com/cdn/v4.19.0/litehouse.js", { type: 'module' } );
   const main = doc.querySelector('main');
   if (main) {
     decorateMain(main);
     document.body.classList.add('appear');
     await loadSection(main.querySelector('.section'), waitForFirstImage);
-    await loadCSS("https://litehouse.bcbsnc.com/cdn/v4.19.0/style.css");
-    await loadScript("https://litehouse.bcbsnc.com/cdn/v4.19.0/litehouse.js", { type: 'module' } );
   }
 
   try {
     /* if desktop (proxy for fast connection) or fonts already loaded, load fonts.css */
     if (window.innerWidth >= 900 || sessionStorage.getItem('fonts-loaded')) {
-      loadFonts();
+      //loadFonts();
     }
   } catch (e) {
     // do nothing

@@ -1,5 +1,5 @@
 mountpoints:
   /:
-    url: "https://localhost:8443/content/bcbsnc-eds/index"
+    url: "https://localhost:8443/content/bcbsnc-eds"
     type: "markup"
     suffix: ".html"

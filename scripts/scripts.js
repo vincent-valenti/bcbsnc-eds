@@ -93,8 +93,6 @@ export function decorateMain(main) {
 async function loadEager(doc) {
   document.documentElement.lang = 'en';
   decorateTemplateAndTheme();
-  //loadCSS("https://litehouse.bcbsnc.com/cdn/v4.19.0/style.css");
-  //loadScript("https://litehouse.bcbsnc.com/cdn/v4.19.0/litehouse.js", { type: 'module' } );
   const main = doc.querySelector('main');
   if (main) {
     decorateMain(main);

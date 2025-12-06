@@ -7,16 +7,6 @@ body.appear {
     display: block;
 }
 
-header .header,
-footer .footer {
-    visibility: hidden;
-}
-
-header .header[data-block-status="loaded"],
-footer .footer[data-block-status="loaded"] {
-    visibility: visible;
-}
-
 /* The following will fix Litehouse FOUCE,
    but it also causes our Google Litehouse scores to be under 90.
 
@@ -53,4 +43,61 @@ footer .footer[data-block-status="loaded"] {
 :root {
     --lh-text-line-height-lg: 1.25em;
     --lh-text-font-size-lg: 1.125rem;
+    --lh-line-height-1-375: 1.375em;
+    --lh-spacing-8: .5rem;
+    --mode-typography-link: #006894;
 }
+
+@scope (lh-typography,lh-alert,lh-avatar,lh-badge,lh-chip,lh-button,lh-input,lh-checkbox,lh-checkbox-group,lh-checkbox-card,lh-radio-group,lh-radio-card,lh-textarea,lh-header,lh-image,lh-modal,lh-select,lh-toggle,.lh-typography,.lh-alert,.lh-avatar,.lh-badge,.lh-chip,.lh-button,.lh-input,.lh-checkbox,.lh-checkbox-group,.lh-checkbox-card,.lh-radio-group,.lh-radio-card,.lh-textarea,.lh-header,.lh-image,.lh-modal,.lh-select,.lh-slideout,.lh-toggle) {
+span {
+    font-family: var(--lh-font-family-sans-serif);
+    color: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    background-color: inherit;
+    line-height: var(--lh-line-height-1-375);
+    text-align: left;
+    text-decoration: none;
+    text-shadow: none;
+    text-transform: none;
+    letter-spacing: normal;
+    word-break: normal;
+    white-space: normal;
+    word-spacing: normal;
+    line-break: auto;
+    hyphens: manual
+}
+
+    a:any-link:not([class^=lh-]) {
+    color:var(--mode-typography-link);
+    font-size: inherit!important;
+    background-color: transparent;
+    font-weight: inherit;
+    text-decoration: underline
+}
+
+    li:not([class^=lh-]) {
+    font-family:var(--lh-font-family-sans-serif);
+    color: inherit;
+    font-weight: inherit;
+    background-color: inherit;
+    line-height: var(--lh-line-height-1-375);
+    text-decoration: none;
+    text-shadow: none;
+    text-transform: none;
+    letter-spacing: normal;
+    word-break: normal;
+    white-space: normal;
+    word-spacing: normal;
+    line-break: auto;
+    hyphens: manual;
+    font-size: inherit;
+    text-align: left;
+    margin-bottom: var(--lh-spacing-8)
+}
+
+strong {
+    font-weight: 700
+}
+}
+

@@ -5,6 +5,6 @@
     "/content/bcbsnc-eds/metadata:/metadata.json"
   ],
   "includes": [
-    "/content/bcbsnc-edse/"
+    "/content/bcbsnc-eds/"
   ]
 }

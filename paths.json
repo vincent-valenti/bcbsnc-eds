@@ -1,10 +1,10 @@
 {
   "mappings": [
-    "/content/bcbsnc-eds/:/",
-    "/content/bcbsnc-eds/configuration:/.helix/config.json",
-    "/content/bcbsnc-eds/metadata:/metadata.json"
+    "/content/aem-boilerplate/:/",
+    "/content/aem-boilerplate/configuration:/.helix/config.json",
+    "/content/aem-boilerplate/metadata:/metadata.json"
   ],
   "includes": [
-    "/content/bcbsnc-eds/"
+    "/content/aem-boilerplate/"
   ]
 }

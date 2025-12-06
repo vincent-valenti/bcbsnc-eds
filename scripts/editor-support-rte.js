@@ -15,7 +15,7 @@ export function decorateRichtext(container = document) {
   }
 
   let element;
-  while (element = container.querySelector('[data-richtext-prop]:not(div)')) {
+  while (element = container.querySelector('[data-richtext-prop]:not(lh-typography)')) {
     const {
       richtextResource,
       richtextProp,
@@ -51,7 +51,7 @@ export function decorateRichtext(container = document) {
         + 'the first paragraph', orphanElements);
       orphanElements.forEach((orphanElement) => deleteInstrumentation(orphanElement));
     } else {
-      const group = document.createElement('div');
+      const group = document.createElement('lh-typography');
       if (richtextResource) {
         group.dataset.aueResource = richtextResource;
         group.dataset.aueBehavior = 'component';
@@ -60,6 +60,7 @@ export function decorateRichtext(container = document) {
       if (richtextLabel) group.dataset.aueLabel = richtextLabel;
       if (richtextFilter) group.dataset.aueFilter = richtextFilter;
       group.dataset.aueType = 'richtext';
+      group.setAttribute('variant', 'rich-text')
       element.replaceWith(group);
       group.append(element, ...siblings);
     }

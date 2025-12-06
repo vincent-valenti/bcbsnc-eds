@@ -499,6 +499,7 @@ function decorateIcons(element, prefix = '') {
  * @param {Element} main The container element
  */
 function decorateSections(main) {
+  if (!main) return;
   main.querySelectorAll(':scope > div:not([data-section-status])').forEach((section) => {
     const wrappers = [];
     let defaultContent = false;
@@ -517,7 +518,7 @@ function decorateSections(main) {
     section.style.display = 'none';
 
     // Process section metadata
-    const sectionMeta = section.querySelector('div.section-metadata');
+    const sectionMeta = section.querySelector(':scope > div:not(.default-content-wrapper) > div.section-metadata');
     if (sectionMeta) {
       const meta = readBlockConfig(sectionMeta);
       Object.keys(meta).forEach((key) => {
@@ -533,6 +534,25 @@ function decorateSections(main) {
       });
       sectionMeta.parentNode.remove();
     }
+
+    // Convert to LH Container
+    const container = document.createElement('lh-container');
+    [...section.attributes].forEach((attr) => {
+      if (attr.value === 'false') {
+        return;
+      }
+      const attrName = attr.name.startsWith('data-lh-') ? attr.name.split('data-lh-')[1] : attr.name;
+      container.setAttribute(attrName, attr.value);
+    });
+    // Always inherit
+    container.setAttribute('inherit', 'true');
+    container.innerHTML = section.innerHTML;
+    section.replaceWith(container);
+
+    // Decorate nested sections
+    container.querySelectorAll('div.default-content-wrapper')?.forEach(defaultContentWrapper => {
+      decorateSections(defaultContentWrapper);
+    });
   });
 }
 
@@ -577,7 +597,10 @@ async function loadBlock(block) {
     block.dataset.blockStatus = 'loading';
     const { blockName } = block.dataset;
     try {
-      const cssLoaded = loadCSS(`${window.hlx.codeBasePath}/blocks/${blockName}/${blockName}.css`);
+      // Only load styles for blocks that need it
+      if (['cards'].includes(blockName)) {
+        await loadCSS(`${window.hlx.codeBasePath}/styles/blocks/${blockName}.css`);
+      }
       const decorationComplete = new Promise((resolve) => {
         (async () => {
           try {
@@ -594,7 +617,7 @@ async function loadBlock(block) {
           resolve();
         })();
       });
-      await Promise.all([cssLoaded, decorationComplete]);
+      await Promise.all([decorationComplete]);
     } catch (error) {
       // eslint-disable-next-line no-console
       console.error(`failed to load block ${blockName}`, error);
@@ -629,7 +652,7 @@ function decorateBlock(block) {
  * @param {Element} main The container element
  */
 function decorateBlocks(main) {
-  main.querySelectorAll('div.section > div > div').forEach(decorateBlock);
+  main.querySelectorAll('div.section > div > div, lh-container.section > div > div').forEach(decorateBlock);
 }
 
 /**
@@ -699,7 +722,7 @@ async function loadSection(section, loadCallback) {
  */
 
 async function loadSections(element) {
-  const sections = [...element.querySelectorAll('div.section')];
+  const sections = [...element.querySelectorAll('div.section, lh-container.section')];
   for (let i = 0; i < sections.length; i += 1) {
     // eslint-disable-next-line no-await-in-loop
     await loadSection(sections[i]);

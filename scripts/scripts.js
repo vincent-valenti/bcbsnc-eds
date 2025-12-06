@@ -98,14 +98,12 @@ async function loadEager(doc) {
     decorateMain(main);
     document.body.classList.add('appear');
     await loadSection(main.querySelector('.section'), waitForFirstImage);
-    await loadCSS("https://litehouse.bcbsnc.com/cdn/v4.19.0/style.css");
-    await loadScript("https://litehouse.bcbsnc.com/cdn/v4.19.0/litehouse.js");
   }
 
   try {
     /* if desktop (proxy for fast connection) or fonts already loaded, load fonts.css */
     if (window.innerWidth >= 900 || sessionStorage.getItem('fonts-loaded')) {
-      loadFonts();
+      //loadFonts();
     }
   } catch (e) {
     // do nothing
@@ -124,11 +122,12 @@ async function loadLazy(doc) {
   const element = hash ? doc.getElementById(hash.substring(1)) : false;
   if (hash && element) element.scrollIntoView();
 
-  loadHeader(doc.querySelector('header'));
-  loadFooter(doc.querySelector('footer'));
+  // TODO: Figure out how to load header and footer
+  //loadHeader(doc.querySelector('header'));
+  //loadFooter(doc.querySelector('footer'));
 
-  loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
-  loadFonts();
+  //loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
+  //loadFonts();
 }
 
 /**

@@ -15,7 +15,7 @@ export function decorateRichtext(container = document) {
   }
 
   let element;
-  while (element = container.querySelector('[data-richtext-prop]:not(lh-typography)')) {
+  while (element = container.querySelector('[data-richtext-prop]:not(div)')) {
     const {
       richtextResource,
       richtextProp,
@@ -51,7 +51,7 @@ export function decorateRichtext(container = document) {
         + 'the first paragraph', orphanElements);
       orphanElements.forEach((orphanElement) => deleteInstrumentation(orphanElement));
     } else {
-      const group = document.createElement('lh-typography');
+      const group = document.createElement('div');
       if (richtextResource) {
         group.dataset.aueResource = richtextResource;
         group.dataset.aueBehavior = 'component';

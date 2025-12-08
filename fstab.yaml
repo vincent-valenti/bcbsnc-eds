@@ -1,5 +1,5 @@
 mountpoints:
   /:
-    url: "https://localhost:8443/content/bcbsnc-eds/index.html"
+    url: "https://main--lh-poc--vincent-valenti.aem.live"
     type: "markup"
     suffix: ".html"

@@ -1,5 +1,5 @@
 mountpoints:
   /:
-    url: "https://experience.adobe.com/#/@bcbsnc/aem/editor/canvas/localhost:8443/content/bcbsnc-eds/index"
+    url: "https://experience.adobe.com/#/@bcbsnc/aem/editor/canvas/localhost:8443/content/bcbsnc-eds/index.html"
     type: "markup"
     suffix: ".html"

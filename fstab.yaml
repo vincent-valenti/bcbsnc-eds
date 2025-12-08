@@ -1,5 +1,5 @@
 mountpoints:
   /:
-    url: "https://localhost:8443/bin/franklin.delivery/vincent-valenti/bcbsnc-eds/main"
+    url: "https://experience.adobe.com/#/@bcbsnc/aem/editor/canvas/localhost:8443/content/bcbsnc-eds/index"
     type: "markup"
     suffix: ".html"

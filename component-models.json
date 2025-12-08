@@ -123,19 +123,94 @@
     "id": "section",
     "fields": [
       {
-        "component": "text",
-        "name": "name",
-        "label": "Section Name",
-        "description": "The label shown for this section in the Content Tree"
+        "component": "boolean",
+        "name": "lh-overlay",
+        "label": "Overlay",
+        "valueType": "boolean"
       },
       {
-        "component": "multiselect",
-        "name": "style",
-        "label": "Style",
+        "component": "text",
+        "name": "lh-context-id",
+        "label": "Context ID",
+        "valueType": "string"
+      },
+      {
+        "component": "select",
+        "label": "Theme",
+        "name": "lh-theme",
+        "valueType": "string",
         "options": [
           {
-            "name": "Highlight",
-            "value": "highlight"
+            "name": "White",
+            "value": "white"
+          },
+          {
+            "name": "Transparent",
+            "value": "transparent"
+          },
+          {
+            "name": "Neutral Light",
+            "value": "neutral-light"
+          },
+          {
+            "name": "Primary Light Gradient",
+            "value": "primary-light-gradient"
+          },
+          {
+            "name": "Primary Light Gradient Bottom",
+            "value": "primary-light-gradient-bottom"
+          },
+          {
+            "name": "Primary Light",
+            "value": "primary-light"
+          },
+          {
+            "name": "Primary Dark",
+            "value": "primary-dark"
+          },
+          {
+            "name": "Primary Extra Dark",
+            "value": "primary-extra-dark"
+          },
+          {
+            "name": "Secondary Light Gradient",
+            "value": "secondary-light-gradient"
+          },
+          {
+            "name": "Secondary Light",
+            "value": "secondary-light"
+          },
+          {
+            "name": "Secondary Dark",
+            "value": "secondary-dark"
+          },
+          {
+            "name": "Brand One Dark",
+            "value": "brand-one-dark"
+          },
+          {
+            "name": "Brand Two Dark",
+            "value": "brand-two-dark"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "label": "Alignment",
+        "name": "lh-alignment",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Left",
+            "value": "left"
+          },
+          {
+            "name": "Center",
+            "value": "center"
+          },
+          {
+            "name": "Right",
+            "value": "right"
           }
         ]
       }
@@ -211,28 +286,6 @@
         "name": "text",
         "value": "",
         "label": "Text",
-        "valueType": "string"
-      },
-      {
-        "component": "tab",
-        "label": "Tab 1",
-        "name": "tab1"
-      },
-      {
-        "component": "text-input",
-        "label": "Text 1",
-        "name": "text1",
-        "valueType": "string"
-      },
-      {
-        "component": "tab",
-        "label": "Tab 2",
-        "name": "tab2"
-      },
-      {
-        "component": "text-input",
-        "label": "Text 2",
-        "name": "text2",
         "valueType": "string"
       }
     ]
